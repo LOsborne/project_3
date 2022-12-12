@@ -183,11 +183,10 @@ body {
 .works-number {
   position: relative;
   top: -70px;
-  left: -165px;
+  left: 17px;
   color: white;
   font-family: "roboto";
   font-size: medium;
-  text-align: center;
   @media screen and (min-width: 800px){
     position: relative;
     top:23px;
@@ -235,6 +234,7 @@ body {
   }
   
   .rest-card-link {
+    position:relative;
     text-decoration: none;
     color: black;
   }
@@ -256,9 +256,9 @@ body {
   }
   
   .rest-heart {
-    position: relative;
-    left: 300px;
-    top: -50px;
+    position: absolute;
+    right: 30px;
+    top: 80px;
     color: black;
     font-size: 20px;
     transform: scale(1);
@@ -270,6 +270,7 @@ body {
       cursor: pointer;
     }
     @media screen and (min-width: 800px){
+      position: relative;
       left: 400px;
       top: -40px;
     }
