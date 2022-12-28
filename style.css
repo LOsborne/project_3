@@ -516,7 +516,7 @@ body {
 
 @keyframes course-rev {
   0% {
-    transform: translateY(10%);
+    transform: translateY(30%);
     opacity: 0;
   }
   70% {
