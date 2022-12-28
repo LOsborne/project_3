@@ -293,6 +293,7 @@ body {
   transform: scale(1);
   transition: transform 300ms;
 
+
   &:hover {
     transform: scale(1.5);
     color: #9356DC;
@@ -449,17 +450,15 @@ body {
 }
 
 .entrees {
-  animation: 1s ease-out 0s 1 entrees;
-
   @media screen and (min-width: 800px) {
     display: flex;
     flex-flow: row wrap;
   }
 }
 
-.main-course {
-  animation: 1.1s ease-out 0s 1 main-course;
 
+
+.main-course {
   @media screen and (min-width: 800px) {
     display: flex;
     flex-flow: row wrap;
@@ -467,41 +466,51 @@ body {
 }
 
 .desert {
-  animation: 1.2s ease-out 0s 1 desert;
-
   @media screen and (min-width: 800px) {
     display: flex;
     flex-flow: row wrap;
   }
 }
 
-@keyframes entrees {
+@keyframes course-rev {
   0% {
-    transform: translateX(-100%);
+    transform: translateY(10%);
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
   }
 
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes main-course {
   0% {
-    transform: translateX(-100%);
+    transform: translateY(10%);
+    opacity: 0;
   }
 
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
+
+
 @keyframes desert {
   0% {
-    transform: translateX(-100%);
+    transform: translateY(10%);
+    opacity: 0;
   }
 
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -536,6 +545,10 @@ body {
     }
   }
 
+  &:hover .fa-circle-check {
+    animation: 0.5s ease-in-out 0s 1 tick-spin;
+  }
+
   @media screen and (min-width: 800px) {
     width: 600px;
     margin-bottom: 30px;
@@ -543,6 +556,22 @@ body {
   }
 }
 
+.dish-details:nth-child(1) {
+  animation: 1s ease-in-out 0s 1 course-rev;
+
+}
+
+.dish-details:nth-child(2) {
+  animation: 1.5s ease-in-out 0s 1 course-rev;
+}
+
+.dish-details:nth-child(3) {
+  animation: 2s ease-in-out 0s 1 course-rev;
+}
+
+.dish-details:nth-child(4) {
+  animation: 2.5s ease-in-out 0s 1 course-rev;
+}
 
 .dish-course-title {
   position: relative;
@@ -620,14 +649,29 @@ body {
   }
 }
 
+
 .fa-circle-check {
   position: relative;
-  left: 30px;
-  top: 40px;
-  height: 20px;
-  width: 20px;
+  left: 20px;
+  top: 25px;
+  font-size: 40px;
+  color: #99E2D0;
   object-fit: cover;
+  z-index: 1;
+
 }
+
+.tick-circle {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 25px;
+  background-color: white;
+  top: 30px;
+  left: 25px;
+  z-index: 1;
+}
+
 
 .order-button {
   width: 200px;
@@ -844,5 +888,20 @@ body {
   100% {
     z-index: 1;
     opacity: 0;
+  }
+}
+
+@keyframes tick-spin {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  30% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-in-out;
   }
 }
